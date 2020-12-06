@@ -2,7 +2,7 @@ class Memory {
   static const operations = const ['%', '/', 'x', '-', '+', '='];
   int _bufferIndex = 0;
   final _buffer = [0.0, 0.0];
-  String _operation = null;
+  String _operation = '';
   String _value = '0';
   bool _wipeValue = false;
   String _lastCommand = '';
@@ -25,15 +25,15 @@ class Memory {
   _isreaplacingOperation(String command) {
     return _operation.contains(_lastCommand) &&
         _operation.contains(command) &&
-        _lastCommand != '==' &&
-        command != '==';
+        _lastCommand != '=' &&
+        command != '=';
   }
 
   _addDigit(String digit) {
-    final isDot = digit == ',';
+    final isDot = digit == '.';
     final wipeValue = (_value == '0' && !isDot) || _wipeValue;
 
-    if (isDot && _value.contains(',') && !wipeValue) {
+    if (isDot && _value.contains('.') && !wipeValue) {
       return;
     }
     final emptyValue = isDot ? '0' : '';
@@ -57,7 +57,7 @@ class Memory {
       _buffer[1] = 0.0;
       _value = _buffer[0].toString();
       _value = value.endsWith('.0') ? _value.split('.')[0] : _value;
-      _operation = isEqual ? null : newOperation;
+      _operation = isEqual ? '' : newOperation;
       _bufferIndex = isEqual ? 0 : 1;
       _wipeValue = !isEqual;
     }
@@ -66,7 +66,7 @@ class Memory {
   _allClear() {
     _value = '0';
     _buffer.setAll(0, [0.0, 0.0]);
-    _operation = null;
+    _operation = '';
     _bufferIndex = 0;
     _wipeValue = false;
   }

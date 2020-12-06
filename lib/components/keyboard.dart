@@ -49,7 +49,7 @@ class KeyBoard extends StatelessWidget {
           ButtonRow(
             buttons: [
               Button.big(text: '0', callBack: callback),
-              Button(text: ',', callBack: callback),
+              Button(text: '.', callBack: callback),
               Button.operation(text: '=', callBack: callback),
             ],
           )
