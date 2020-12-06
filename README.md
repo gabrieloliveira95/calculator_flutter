@@ -1,16 +1,23 @@
 # calculator
 
-A new Flutter project.
+A new Flutter project simulate Mac Calculator;
 
-## Getting Started
+## From Cod3r Course
 
-This project is a starting point for a Flutter application.
+## Tree
+### Components
+- /lib/components/button_row.dart -> Row with Buttons List
+- /lib/components/button.dart -> Class to generate Button
+- /lib/components/display.dart -> Class to generate Calcularor's Display
+- /lib/components/keyboard.dart -> Class to generate Calcularor's Keyboard
 
-A few resources to get you started if this is your first Flutter project:
+### Models
+- /lib/models/memory.dart -> All calculators Logic
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Screens
+- /lib/screens/calculator.dart -> Calculator Front Screen
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Main
+- /lib/main.dart -> Main file of App
+
+
